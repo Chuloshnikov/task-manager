@@ -1,6 +1,6 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const dotenv = require("dotenv");
+import express from "express";
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
 
 const app = express();
 
