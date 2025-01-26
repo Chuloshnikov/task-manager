@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import connectDB from '../config/db.js';
 
-import User from "../models/UserModel.js";
+import User from "../models/userModel.js";
 
 connectDB();
 
