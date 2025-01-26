@@ -84,9 +84,6 @@ export const getTasksByAuthor = async (req, res) => {
 
 export const getAllTasks = async (req, res) => {
     try {
-        const userId = req.user._id;
-        
-
         const tasks = await Task.find();
 
         if (!tasks || tasks.length === 0) {
