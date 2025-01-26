@@ -82,6 +82,24 @@ export const getTasksByAuthor = async (req, res) => {
 }
 
 
+export const getAllTasks = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        
+
+        const tasks = await Task.find();
+
+        if (!tasks || tasks.length === 0) {
+            return res.status(404).json({ message: 'Tasks not found' })
+        }
+
+        return res.status(200).json({ tasks });
+    } catch(err) {
+        res.status(400).json({ message: 'Failed to find the tasks' }, err.message)
+    }
+}
+
+
 export const getTask = async (req, res) => {
     try {
         const taskId = req.params.id;
