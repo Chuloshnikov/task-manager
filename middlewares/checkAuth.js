@@ -2,10 +2,10 @@ import User from "../models/userModel.js";
 import bcrypt from 'bcrypt';
 
 export default async (req, res, next) => {
-    // check for bSIC AUTH header
+    // check for BASIC AUTH header
     
     if ( !req.headers.authorization || req.headers.authorization?.indexOf('Basic') === -1 ) {
-        return resizeBy.status(401).json({ message: 'Invalid authorization header' });
+        return res.status(401).json({ message: 'Invalid authorization header' });
     }
 
     //verify basic auth
